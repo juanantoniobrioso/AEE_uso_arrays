@@ -113,7 +113,7 @@
                     return array.copyWithin(0, 3); //[ 40, 50, 30, 40, 50 ]
                 }
             },
-            //4
+            //4 NO FUNCIONA
             {
                 method: "Array.prototype.entries()",
                 description: "Crea un iterador de pares [índice, valor].",
@@ -125,7 +125,17 @@
                     for (const [index, value] of array.entries()) {
                         return array(index, value); // Índices y valores del array
                     }
-                }// no funciona
+                }// NO FUNCIONA
+            },
+            //5
+            {
+                method: "Array.prototype.every()",
+                description: "Verifica si todos los elementos cumplen una condición.",
+                example: `console.log(array.every(n => n > 20));`, 
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.every(n => n > 20);
+                }
             },
 
 
