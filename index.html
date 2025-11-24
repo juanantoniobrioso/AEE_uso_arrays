@@ -137,6 +137,212 @@
                     return array.every(n => n > 20);
                 }
             },
+            //6 
+            {
+                method: "Array.prototype.fill()",
+                description: "Rellena el array con un valor desde un índice inicial a uno final.",
+                example: `array.fill(0, 1, 3);
+                console.log(array);`, // [40, 0, 0, 40, 50]
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.fill(0, 1, 3);
+                }
+            },
+            //7 FUNCIONA PERO NO DA EL RESULTADO ESPERADO
+            {
+                method: "Array.prototype.filter()",
+                description: "Crea un nuevo array con elementos que cumplan una condición.",
+                example: `let filtrado = array.filter(n => n > 30);
+                console.log(filtrado);`, //[40, 40, 50]
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    let filtrado = array.filter(n => n > 30);
+                    return filtrado;
+                }//FUNCIONA PERO NO DA EL RESULTADO ESPERADO (DA [40, 50])
+            },
+            //8
+            {
+                method: "Array.prototype.find()",
+                description: "Devuelve el primer elemento que cumpla con una condición.",
+                example: `console.log(array.find(n => n > 30));`, //40
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.find(n => n > 30);
+                }
+            },
+            //9 FUNCIONA PERO NO DA EL RESULTADO ESPERADO
+            {
+                method: "Array.prototype.findIndex()",
+                description: "Devuelve el índice del primer elemento que cumpla una condición.",
+                example: `console.log(array.findIndex(n => n > 30));`, //0
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.findIndex(n => n > 30);
+                } //FUNCIONA PERO NO DA EL RESULTADO ESPERADO (DA 3)
+            },
+            //10
+            {
+                method: "Array.prototype.findLast()",
+                description: "Devuelve el último elemento que cumpla una condición.",
+                example: `console.log(array.findLast(n => n > 30));`, //50
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.findLast(n => n > 30);
+                }
+            },
+            //11
+            {
+                method: "Array.prototype.findLastIndex()",
+                description: "Índice del último elemento que cumpla una condición.",
+                example: `console.log(array.findLastIndex(n => n > 30));`, //4
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.findLastIndex(n => n > 30);
+                }
+            },
+            //12
+            {
+                method: "Array.prototype.flat()",
+                description: "Aplana un array multidimensional.",
+                example: `let nested = [1, [2, [3, 4]]];
+                console.log(nested.flat(2));`, // [1, 2, 3, 4]
+                execute: () => {
+                    let nested = [1, [2, [3, 4]]];
+                    return nested.flat(2);
+                }
+            },
+            //13
+            {
+                method: "Array.prototype.flatMap()",
+                description: "Aplica una función y aplana el resultado.",
+                example: `let duplicados = [1, 2, 3];
+                console.log(duplicados.flatMap(n => [n, n * 2]));`, // [1, 2, 2, 4, 3, 6]
+                execute: () => {
+                    let duplicados = [1, 2, 3];
+                    return duplicados.flatMap(n => [n, n * 2]);
+                }
+            },
+            //14 NO FUNCIONA
+            {
+                method: "Array.prototype.forEach()",
+                description: "Ejecuta una función por cada elemento.",
+                example: `array.forEach(n => console.log(n));`, // 40, 0, 0, 40, 50
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.forEach(n => array(n));
+                }//NO FUNCIONA
+            },
+            //15
+            {
+                method: "Array.prototype.include()",
+                description: "Comprueba si el array contiene un valor.",
+                example: `console.log(array.includes(40));`, //true
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.includes(40);
+                }
+            },
+            //16
+            {
+                method: "Array.prototype.indexOf()",
+                description: "Encuentra el índice de un elemento.",
+                example: `console.log(array.indexOf(40));`, //3
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.indexOf(40);
+                }
+            },
+            //17
+            {
+                method: "Array.prototype.join()",
+                description: "Combina los elementos del array en un string.",
+                example: `console.log(array.join("-"));`, // "10-20-30-40-50"
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.join("-");
+                }
+            },
+            //18 FUNCIONA PERO NO DA EL RESULTADO ESPERADO
+            {
+                method: "Array.prototype.keys()",
+                description: "Iterador de índices.",
+                example: `for (const key of array.keys()) {
+                    console.log(key); 
+                }`, // 0, 1, 2, 3, 4
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    for (const key of array.keys()) {
+                        return key;
+                    };
+                }//FUNCIONA PERO NO DA EL RESULTADO ESPERADO (DA 0)
+            },
+            //19
+            {
+                method: "Array.prototype.lastIndexOf()",
+                description: "Encuentra el último índice de un elemento.",
+                example: `console.log(array.lastIndexOf(40));`, //3
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.lastIndexOf(40);
+                }
+            },
+            //20
+            {
+                method: "Array.prototype.map()",
+                description: "Crea un nuevo array transformando los elementos.",
+                example: `let mapeado = array.map(n => n * 2);
+                console.log(mapeado);`, // [80, 0, 0, 80, 100]
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    let mapeado = array.map(n => n * 2);
+                    return mapeado;
+                }
+            },
+            //21
+            {
+                method: "Array.prototype.pop()",
+                description: "Elimina el último elemento.",
+                example: `console.log(array.pop());
+                console.log(array);`, // [40, 0, 0, 40]
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.pop(); //50
+                    return array; // [40, 0, 0, 40]
+                }
+            },
+            //22
+            {
+                method: "Array.prototype.push()",
+                description: "Agrega elementos al final.",
+                example: `array.push(60);
+                console.log(array);`, // [40, 0, 0, 40, 60]
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    array.push(60);
+                    return array;
+                }
+            },
+            //23
+            {
+                method: "Array.prototype.reduce()",
+                description: "Reduce el array a un valor acumulado.",
+                example: `console.log(array.reduce((acc, n) => acc + n, 0));`, //150
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.reduce((acc, n) => acc + n, 0);
+                }
+            },
+            //24
+            {
+                method: "Array.prototype.reduceRight()",
+                description: "Igual que reduce, pero desde el final.",
+                example: `console.log(array.reduceRight((acc, n) => acc - n, 0));`, //140
+                execute: () => {
+                    let array = [10, 20, 30, 40, 50];
+                    return array.reduceRight((acc, n) => acc - n, 0);
+                }//da -150 no se si eso es asi o no
+            },
+            
 
 
 
