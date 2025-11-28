@@ -150,7 +150,7 @@
             },
             //7 FUNCIONA PERO NO DA EL RESULTADO ESPERADO
             {
-                method: "Array.prototype.filter()",
+                method: "Array.prototype.filter(*)",
                 description: "Crea un nuevo array con elementos que cumplan una condición.",
                 example: `let filtrado = array.filter(n => n > 30);
                 console.log(filtrado);`, //[40, 40, 50]
@@ -170,7 +170,7 @@
                     return array.find(n => n > 30);
                 }
             },
-            //9 FUNCIONA PERO NO DA EL RESULTADO ESPERADO
+            //9 
             {
                 method: "Array.prototype.findIndex()",
                 description: "Devuelve el índice del primer elemento que cumpla una condición.",
@@ -178,7 +178,7 @@
                 execute: () => {
                     let array = [10, 20, 30, 40, 50];
                     return array.findIndex(n => n > 30);
-                } //FUNCIONA PERO NO DA EL RESULTADO ESPERADO (DA 3)
+                }
             },
             //10
             {
@@ -340,7 +340,7 @@
                 execute: () => {
                     let array = [10, 20, 30, 40, 50];
                     return array.reduceRight((acc, n) => acc - n, 0);
-                }//da -150 no se si eso es asi o no
+                }
             },
             //25
             {
